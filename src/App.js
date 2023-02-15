@@ -1,5 +1,6 @@
 import './App.css';
-import {useState,useEffect} from 'react';
+import {useState,useEffect} from 'react'
+import ArticleList from './components/ArticleList';
 
 function App() {
   const [articles,setArticles] = useState([])
@@ -20,17 +21,7 @@ function App() {
   },[])
   return (
     <div className="App">
-     hai
-      {articles.map((article)=>{
-        return(
-          <div>
-          <h2 key={article}>{article.title}</h2>
-          <p key={article}>{article.desc}</p>
-          </div>
-        
-        )
-      })}
-     
+     <ArticleList articles={articles}/>
     </div>
   );
 }
